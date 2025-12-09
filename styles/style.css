@@ -19,7 +19,7 @@
     background-attachment: fixed;
     margin: auto;
     padding-top: 100px;
-    font-variation-settings: 400;
+    font-variation-settings: 'wght' 400;
 }
 
 .header {
