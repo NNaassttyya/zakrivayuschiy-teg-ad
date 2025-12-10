@@ -113,3 +113,32 @@
 .card__like-button {
   min-inline-size: 130px;
 }
+
+.grayscale {
+  filter: grayscale(0.7);
+}
+
+.saturate {
+  filter: saturate(5);
+}
+
+.hue {
+  filter: hue-rotate(26deg);
+}
+
+.invert {
+  filter: invert(0.8);
+}
+
+.sepia {
+  filter: sepia(90%);
+}
+
+.blur {
+  filter: blur(8px);
+}
+
+.mult {
+  filter: hue-rotate(60deg) contrast(0.5) brightness(1.4);
+}
+
