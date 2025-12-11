@@ -1,14 +1,3 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--font-main, Arial, Helvetica, sans-serif);
@@ -32,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     font-family: var(--font-accent, Courier);
-    border: 2px solid rgba(0, 0, 0, 1);
+    border: 2px solid black;
     margin-block-end: 100px;
     background-color: white;
     padding-block-end: 125px;
@@ -71,21 +60,22 @@
   background-color: white;
   border: 2px solid black;
 }
+
 .card__title {
   font-size: 18px;
-  line-height: normal;
   font-variation-settings: "wght"  700;
   padding: 4px 24px 4px 10px;
 }
+
 .card__text {
   padding: 23px 25px 25px;
   display: flex;
   flex-direction: column;
   gap: 29px;
-  font-variation-settings: "wdth" var(--font-weight-main);
+  font-variation-settings: "wdth" 400;
   font-size: 18px;
   line-height: 1.16;
-  border-block-start: 2px solid var(--color-main, rgba(0, 0, 0, 1));
+  border-block-start: 2px solid black;
 }
 
 .card__buttons {
@@ -122,7 +112,7 @@
   filter: saturate(5);
 }
 
-.hue {
+.hue-rotate {
   filter: hue-rotate(26deg);
 }
 
@@ -142,9 +132,7 @@
   filter: hue-rotate(60deg) contrast(0.5) brightness(1.4);
 }
 
-.contrast {
-  filter: contrast(1.5);
-}
+
 
 .watermark {
   position: absolute;
@@ -153,16 +141,47 @@
   font-family: var(--font-accent);
   font-size: 14px;
   opacity: 0.5;
-  text-shadow: -1 0 var(--color-bg, rgba(255, 255, 255, 1));
+  text-shadow: -1 0 white;
 }
 
 @supports (
-  (text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1))) or
-    (-webkit-text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1)))
+  (text-stroke: 1px white) or
+    (-webkit-text-stroke: 1px white)
 ) {
   .watermark {
-    -webkit-text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1));
-    text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1));
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
     text-shadow: none;
   }
+}
+
+.save {
+  padding: 52px 0 103px;
+  display: flex;
+  justify-content: center;
+}
+
+.save__button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background-color: white;
+  padding: 18px 20px;
+}
+
+.popup__text {
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+@media (width <=375px) {
+  .watermark {
+    inset-inline-end: 13px;
+  }
+
+  .popup {
+    padding: clamp(1.875rem, -2.4886rem + 21.8182vw, 2.625rem);
+  }
+
 }
