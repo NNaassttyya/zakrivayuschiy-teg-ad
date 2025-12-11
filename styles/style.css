@@ -95,8 +95,7 @@
   font-family: var(--font-accent, Courier, monospace);
   font-size: 14px;
   line-height: 1.11;
-  color: white;
-  mix-blend-mode: difference;
+  color: black;
 }
 
 .card__like-button {
@@ -144,11 +143,9 @@
 }
 
 @supports (
-  (text-stroke: 1px white) or
-    (-webkit-text-stroke: 1px white)
+  (text-stroke: 1px white)
 ) {
   .watermark {
-    -webkit-text-stroke: 1px white;
     text-stroke: 1px white;
     text-shadow: none;
   }
